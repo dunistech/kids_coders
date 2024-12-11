@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunis Tech Children Coders Hub</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
+</head>
+<body>
+    <nav>
+        <div class="container nav_container">
+            <a href="index.html"><img class="dunislogo" src="images/dunis logo.png"></a>
+            <a class="w-25 p-3 " href="index.html"><img" src="images/dunis logo.png"></a>
+            <ul class="nav__menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="coder web project/Math Aid App/Math aid.html">Maths Aid</a></li>
+                <li class="drop"> Gallery
+                    <a href="gr2.html"> 2022</a>
+                    <a href="home work.html"> 2023</a>
+                    <a href="coders24.html"> 2024</a>
+                </li>
+            </ul>
+            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+
+    <!-- what I changed -->
+    <style>
+        /* Parent container for header content */
+        .header__container {
+            display: flex; /* Lay out text and slider side by side */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            align-items: center; /* Vertically align items */
+            gap: 20px; /* Space between text and slider */
+        }
+    
+        /* Left section (text) */
+        .header__left {
+            flex: 1; /* Take up available space */
+            padding: 20px;
+        }
+    
+        /* Right section (slider container) */
+        .header__right {
+            flex: 1; /* Take up equal space as the text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensure content stays within bounds */
+        }
+    
+        /* Slider styles */
+        .slider {
+            display: flex;
+            width: 100%; /* Fill the parent container */
+            height: 100%; /* Match the height of the images */
+            overflow: hidden; /* Hide overflowing images */
+            transition: transform 0.9s ease-in-out; /* Smooth sliding effect */
+        }
+    
+        /* Individual slide */
+        .slide {
+            flex: 0 0 100%; /* Each slide takes up 100% of the slider's width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        /* Responsive images */
+        .slide img {
+            width: 100%; /* Images fill the container */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensure images cover the slide area */
+            border-radius: 8px;
+        }
+    
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header__container {
+                flex-direction: column; /* Stack text and slider vertically on smaller screens */
+            }
+    
+            .header__left, .header__right {
+                flex: unset; /* Allow sections to shrink naturally */
+                width: 100%; /* Take up full width */
+            }
+        }
+    </style>
+    
+    <header>
+        <div class="container header__container">
+            <!-- Left section for text -->
+            <div class="header__left">
+                <h1>Dunis Tech Academy, Children Coders Hub</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam distinctio in repudiandae nihil aspernatur unde laboriosam obcaecati voluptates accusamus commodi.</p>
+                <a href="courses.html" class="btn btn-primary">Get Started</a>
+            </div>
+    
+            <!-- Right section for slider -->
+            <div class="header__right">
+                <div class="slider">
+                    <div class="slide"><img src="./RESIZED/coders@dunistech 2021.jpg" alt="Image 1"></div>
+                    <div class="slide"><img src="./RESIZED/dunistech coders2016-1.png" alt="Image 2"></div>
+                    <div class="slide"><img src="./RESIZED/dunistechcoders-2018-4.png" alt="Image 3"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(".slide"); // Select all slides
+            const totalSlides = slides.length; // Total number of slides
+    
+            function showSlides() {
+
+                // Hide all slides initially
+                slides.forEach((slide, index) => {
+                    slide.style.transform = `translateX(${index * 100}%)`;
+                });
+    
+                // Show the current slide
+                slides[slideIndex].style.transform = `translateX(-${slideIndex * 100}%)`;
+                slideIndex++;
+
+                if (slideIndex >= totalSlides) {
+                    slideIndex = 0; // Loop back to the first slide after the last
+                }
+                setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+    
+            // Call the function to start the sliding
+            showSlides();
+    
+        });
+    </script>
+    <!-- end-of-what-I-changed  -->
+     
+    <section class="courses">
+        <h2>Events</h2>
+       
+    </section>
+
+    <!----------End of Courses------------>
+
+    <section class="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div class="container faqs__container">
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq__icon">
+                    <i class="uil uil-plus"></i>
+                </div>
+                <div class="question__answer">
+                    <h4>How do I know the right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ex, alias consectetur incidunt adipisci iusto numquam laborum vel provident quo quos blanditiis pariatur eaque nisi. Consequuntur consectetur voluptatum architecto mollitia!</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+      <!----------End of FAQS------------>
+
+    <section class="container testimonials__container mySwiper">
+        <h2>Students' Testimonials</h2>
+        <div class="swiper-wrapper">
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar1.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Valerie Isong</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar2.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Clement Anyanwu</h5>
+                    <small>Web Developer</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar3.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Anya Arinze</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar4.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Hajia Nnenna</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar5.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Amara Eze</h5>
+                    <small>Student</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avatar">
+                    <img src="./images/avatar6.jpg" alt="">
+                </div>
+                <div class="testimonial__info">
+                    <h5>Christabel Ngozi</h5>
+                    <small>Designer</small>
+                </div>
+                <div class="testimonial__body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eveniet eius, voluptate consectetur explicabo natus voluptates. Fugiat hic alias laborum exercitationem totam vero laudantium officia quidem mollitia. Illum, quaerat iure.
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <!----------End of TESTIMONIAL------------>
+
+
+    <footer>
+        <div class="container footer__container">
+            <div class="footer__1">
+                <a href="index.html" class="footer__logo">
+                    <h4>Dunis Tech Academy</h4>
+                </a>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam et non sint, cum molestiae.
+                </p>
+            </div>
+            <div class="footer__2">
+                <h4>Permalinks</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__3">
+                <h4>Privacy</h4>
+                <ul class="privacy">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__4">
+                <h4>Contact Us</h4>
+                <div>
+                    <p>+23470...</p>
+                    <p>dunistrainer@gmail.com</p>
+                </div>
+
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="uil uil-facebook-f"></i> </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-instagram-alt"></i></a>
+                    </li>
+                  
+                    <li><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <small>Copyright &copy; Fayvehz Concept</small>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+  
+</body>
+</html>
